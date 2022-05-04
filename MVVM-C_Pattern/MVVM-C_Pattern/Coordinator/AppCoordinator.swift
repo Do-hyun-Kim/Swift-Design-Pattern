@@ -27,9 +27,9 @@ class AppCoordinator: Coordinator {
     
     func start() {
         let coordinator = MainCoordinator(presenter: presenter)
+        coordinator.parentCoordinator = self
         childrenCoordinator.append(coordinator)
         coordinator.start()
-        
         window.makeKeyAndVisible()
     }
 }
@@ -47,19 +47,21 @@ class MainCoordinator: Coordinator {
     
     func start() {
         let mainVC = MainViewController.init()
+        mainVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showSecondViewController))
         mainVC.coordinator = self
         presenter.pushViewController(mainVC, animated: true)
     }
     
+    @objc
     func showSecondViewController() {
-        let secondCoordinator = SecondCoordinator(presenter: presenter)
-        childrenCoordinator.append(secondCoordinator)
-        secondCoordinator.start()
+        let editCoordinator = EditCoordinator(presenter: presenter)
+        childrenCoordinator.append(editCoordinator)
+        editCoordinator.start()
     }
 }
 
 
-class SecondCoordinator: Coordinator {
+class EditCoordinator: Coordinator {
     var presenter: UINavigationController
     var childrenCoordinator: [Coordinator]
     
@@ -69,7 +71,7 @@ class SecondCoordinator: Coordinator {
     }
     
     func start() {
-        let secondVC = SecondViewController.init()
+        let secondVC = EditViewController.init()
         presenter.pushViewController(secondVC, animated: true)
     }
 }
