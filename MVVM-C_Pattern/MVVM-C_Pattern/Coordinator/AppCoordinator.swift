@@ -26,7 +26,50 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        window.rootViewController = presenter
+        let coordinator = MainCoordinator(presenter: presenter)
+        childrenCoordinator.append(coordinator)
+        coordinator.start()
+        
         window.makeKeyAndVisible()
+    }
+}
+
+
+class MainCoordinator: Coordinator {
+    var presenter: UINavigationController
+    var childrenCoordinator: [Coordinator]
+    weak var parentCoordinator: AppCoordinator?
+    
+    init(presenter: UINavigationController) {
+        self.presenter = presenter
+        self.childrenCoordinator = []
+    }
+    
+    func start() {
+        let mainVC = MainViewController.init()
+        mainVC.coordinator = self
+        presenter.pushViewController(mainVC, animated: true)
+    }
+    
+    func showSecondViewController() {
+        let secondCoordinator = SecondCoordinator(presenter: presenter)
+        childrenCoordinator.append(secondCoordinator)
+        secondCoordinator.start()
+    }
+}
+
+
+class SecondCoordinator: Coordinator {
+    var presenter: UINavigationController
+    var childrenCoordinator: [Coordinator]
+    
+    init(presenter: UINavigationController) {
+        self.presenter = presenter
+        self.childrenCoordinator = []
+    }
+    
+    func start() {
+        let secondVC = SecondViewController.init()
+        presenter.pushViewController(secondVC, animated: true)
     }
 }
