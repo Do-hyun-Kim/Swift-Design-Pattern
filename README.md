@@ -69,3 +69,9 @@ class HomeCoordinator: Coordinator {
 }
 
 ```
+  
+  
+Coordinator Pattern 코드 구현 하면서 궁금점
+  - **ChildrenCoordinator**를 통하여 하위 Coordinator를 저장 하는 경우가 있는데 기존 **start()** 메소드를 통해 Push 하는 경우와 ChildrenCoordinator를 사용하여 하위 Coordinaotr를 사용한 Push 방법의 차이는 어떤것인지?
+  - ViewModel에 Coordinator를 선언 하는 것과 View(ViewController)에 Coordinator를 선언 하는 것의 차이와 어떤 것이 더 효율적인지?
+  - TabbarController에 경우 Coordinator를 어떻게 분배 할것인지?
