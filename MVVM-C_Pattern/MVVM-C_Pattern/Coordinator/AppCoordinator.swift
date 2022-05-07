@@ -19,6 +19,9 @@ class AppCoordinator: Coordinator {
     var presenter: UINavigationController
     var childrenCoordinator: [Coordinator]
     
+    var isLoggedIn: Bool = false
+    
+    
     init(window: UIWindow) {
         self.window = window
         self.presenter = UINavigationController()
@@ -26,13 +29,47 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
+        if self.isLoggedIn {
+            self.showMainViewController()
+        } else {
+            self.showLoginViewController()
+        }
+    }
+    
+    
+    private func showMainViewController() {
         let coordinator = MainCoordinator(presenter: presenter)
         coordinator.parentCoordinator = self
         childrenCoordinator.append(coordinator)
         coordinator.start()
         window.makeKeyAndVisible()
     }
+    
+    private func showLoginViewController() {
+        
+    }
 }
+
+
+
+class LoginCoordinator: Coordinator {
+    var presenter: UINavigationController
+    var childrenCoordinator: [Coordinator]
+    
+    init(presenter: UINavigationController) {
+        self.presenter = presenter
+        self.childrenCoordinator = []
+    }
+    
+    func start() {
+        let viewController = LoginViewController.init()
+        viewController.view.backgroundColor = .white
+        self.presenter.viewControllers = [viewController]
+    }
+    
+}
+
+
 
 
 class MainCoordinator: Coordinator {
