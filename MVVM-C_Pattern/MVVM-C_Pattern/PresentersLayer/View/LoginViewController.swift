@@ -7,13 +7,21 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate: AnyObject {
+    func login()
+}
 
 class LoginViewController: UIViewController {
     
+    weak var delegate: LoginViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+    }
+    
+    deinit {
+        print("- \(type(of: self)) deinit")
     }
     
     
@@ -22,13 +30,9 @@ class LoginViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = item
     }
     
-    deinit {
-        print("- \(type(of: self)) deinit")
-    }
-    
     @objc
     func loginButtonDidTap() {
-
+        self.delegate?.login()
     }
     
 }

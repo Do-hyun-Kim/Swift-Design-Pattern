@@ -19,11 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         // send that into our coordinator so that it can display view controllers
-        appCoordinator = AppCoordinator(window: window!)
+        window = UIWindow(windowScene: windowScene)
+        let navigationController = UINavigationController()
+        window?.rootViewController = navigationController
+        
+        appCoordinator = AppCoordinator(presenter: navigationController)
         appCoordinator?.start()
         
-        window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = appCoordinator?.presenter
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

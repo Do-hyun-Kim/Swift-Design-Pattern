@@ -13,18 +13,24 @@ protocol Coordinator: AnyObject {
     func start()
 }
 
+protocol LoginCoordinatorDelegate: AnyObject {
+    func didLoginIn(_ coordinator: LoginCoordinator)
+}
 
-class AppCoordinator: Coordinator {
-    var window: UIWindow
+
+protocol MainCoordinatorDelegate: AnyObject {
+    func didLogedout(_ coordinator: MainCoordinator)
+}
+
+class AppCoordinator: Coordinator, LoginCoordinatorDelegate, MainCoordinatorDelegate {
     var presenter: UINavigationController
     var childrenCoordinator: [Coordinator]
     
     var isLoggedIn: Bool = false
     
     
-    init(window: UIWindow) {
-        self.window = window
-        self.presenter = UINavigationController()
+    init(presenter: UINavigationController) {
+        self.presenter = presenter
         self.childrenCoordinator = []
     }
     
@@ -39,22 +45,35 @@ class AppCoordinator: Coordinator {
     
     private func showMainViewController() {
         let coordinator = MainCoordinator(presenter: presenter)
-        coordinator.parentCoordinator = self
-        childrenCoordinator.append(coordinator)
+        coordinator.delegate = self
         coordinator.start()
-        window.makeKeyAndVisible()
+        childrenCoordinator.append(coordinator)
     }
     
     private func showLoginViewController() {
-        
+        let coordinator = LoginCoordinator(presenter: presenter)
+        coordinator.delegate = self
+        coordinator.start()
+        childrenCoordinator.append(coordinator)
+    }
+    
+    func didLoginIn(_ coordinator: LoginCoordinator) {
+        childrenCoordinator = childrenCoordinator.filter { $0 !== coordinator }
+        showMainViewController()
+    }
+    
+    func didLogedout(_ coordinator: MainCoordinator) {
+        childrenCoordinator = childrenCoordinator.filter { $0 !== coordinator }
+        showLoginViewController()
     }
 }
 
 
 
-class LoginCoordinator: Coordinator {
+class LoginCoordinator: Coordinator, LoginViewControllerDelegate {
     var presenter: UINavigationController
     var childrenCoordinator: [Coordinator]
+    var delegate: LoginCoordinatorDelegate?
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -64,18 +83,23 @@ class LoginCoordinator: Coordinator {
     func start() {
         let viewController = LoginViewController.init()
         viewController.view.backgroundColor = .white
+        viewController.delegate = self
         self.presenter.viewControllers = [viewController]
     }
     
+    func login() {
+        delegate?.didLoginIn(self)
+    }
+    
 }
 
 
 
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: Coordinator, MainViewControllerDelegate {
     var presenter: UINavigationController
     var childrenCoordinator: [Coordinator]
-    weak var parentCoordinator: AppCoordinator?
+    weak var delegate: MainCoordinatorDelegate?
     
     init(presenter: UINavigationController) {
         self.presenter = presenter
@@ -83,32 +107,13 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let mainVC = MainViewController.init()
-        mainVC.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showSecondViewController))
-        mainVC.coordinator = self
-        presenter.pushViewController(mainVC, animated: true)
+        let viewController = MainViewController.init()
+        viewController.view.backgroundColor = .gray
+        viewController.delegate = self
+        presenter.viewControllers = [viewController]
     }
     
-    @objc
-    func showSecondViewController() {
-        let editCoordinator = EditCoordinator(presenter: presenter)
-        childrenCoordinator.append(editCoordinator)
-        editCoordinator.start()
-    }
-}
-
-
-class EditCoordinator: Coordinator {
-    var presenter: UINavigationController
-    var childrenCoordinator: [Coordinator]
-    
-    init(presenter: UINavigationController) {
-        self.presenter = presenter
-        self.childrenCoordinator = []
-    }
-    
-    func start() {
-        let secondVC = EditViewController.init()
-        presenter.pushViewController(secondVC, animated: true)
+    func logout() {
+        delegate?.didLogedout(self)
     }
 }

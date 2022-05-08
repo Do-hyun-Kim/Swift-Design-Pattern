@@ -10,6 +10,11 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
+
+protocol MainViewControllerDelegate: AnyObject {
+    func logout()
+}
+
 class MainViewController: UIViewController {
     
     //MARK: Property
@@ -29,7 +34,7 @@ class MainViewController: UIViewController {
         return $0
     }(UIButton())
     
-    weak var coordinator: MainCoordinator?
+    weak var delegate: MainViewControllerDelegate?
     public var mainViewModel: MainViewModel = MainViewModel()
     private var disposeBag: DisposeBag = DisposeBag()
     
@@ -40,6 +45,10 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         configure()
         bindUI()
+    }
+    
+    deinit {
+        print("- \(type(of: self)) deinit")
     }
     
     
@@ -53,7 +62,8 @@ class MainViewController: UIViewController {
             .nextButtonDidTap
             .withUnretained(self)
             .bind { vc, _ in
-                vc.coordinator?.showSecondViewController()
+                print("Tap")
+                vc.delegate?.logout()
             }.disposed(by: disposeBag)
     }
     
@@ -61,6 +71,9 @@ class MainViewController: UIViewController {
     
     private func configure() {
         view.backgroundColor = .white
+        
+        let item = UIBarButtonItem(title: "로그아웃", style: .plain, target: self, action: #selector(logoutButtonDidTap))
+        self.navigationItem.rightBarButtonItem = item
         
         [titleLabel,nextButton].forEach {
             view.addSubview($0)
@@ -78,6 +91,11 @@ class MainViewController: UIViewController {
             $0.width.height.equalTo(titleLabel)
         }
         
+    }
+    
+    @objc
+    func logoutButtonDidTap() {
+        self.delegate?.logout()
     }
 
 }
