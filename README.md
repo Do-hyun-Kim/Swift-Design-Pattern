@@ -73,5 +73,7 @@ class HomeCoordinator: Coordinator {
   
 Coordinator Pattern 코드 구현 하면서 궁금점
   - **ChildrenCoordinator**를 통하여 하위 Coordinator를 저장 하는 경우가 있는데 기존 **start()** 메소드를 통해 Push 하는 경우와 ChildrenCoordinator를 사용하여 하위 Coordinaotr를 사용한 Push 방법의 차이는 어떤것인지?
+    - Push 같은 경우 Flow가 이어지게 Navigation이 된다면 Push를 사용하여 화면 전환을 사용하며, 그렇지 않으면 self.navigation.viewControllers = [ViewController] 를 사용 하여 **RootViewController**를 설정한다.
+    - **ChildrenCoordinator** 통해 Coordinator Tree가 생성되며, Parent Coordinator가 Children Coordinator를 알기에 화면 전환을 할 수 있습니다. 또한 이러한 저장을 통하여, 여러 Children Coordinator중 자식 Coordinator를 구분 할 수 있으며, 추후 삭제를 해야 합니다 -> Remove 안하면 순한 참조 문제 
   - ViewModel에 Coordinator를 선언 하는 것과 View(ViewController)에 Coordinator를 선언 하는 것의 차이와 어떤 것이 더 효율적인지?
   - TabbarController에 경우 Coordinator를 어떻게 분배 할것인지?
