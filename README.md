@@ -5,6 +5,7 @@
 |디자인 패턴|설명|
 |:--------------:|:--------------:|
 |**Coordinator - Pattern**|2022.05.03|
+|**Dependency - Pattern**| 2022.05.09|
   
  <br>
   
@@ -77,3 +78,7 @@ Coordinator Pattern 코드 구현 하면서 궁금점
     - **ChildrenCoordinator** 통해 Coordinator Tree가 생성되며, Parent Coordinator가 Children Coordinator를 알기에 화면 전환을 할 수 있습니다. 또한 이러한 저장을 통하여, 여러 Children Coordinator중 자식 Coordinator를 구분 할 수 있으며, 추후 삭제를 해야 합니다 -> Remove 안하면 순한 참조 문제 
   - ViewModel에 Coordinator를 선언 하는 것과 View(ViewController)에 Coordinator를 선언 하는 것의 차이와 어떤 것이 더 효율적인지?
   - TabbarController에 경우 Coordinator를 어떻게 분배 할것인지?
+<br>
+  
+  
+<h2>Dependency Pattern</h2>
