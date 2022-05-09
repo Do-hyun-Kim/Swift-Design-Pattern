@@ -85,6 +85,7 @@ class LoginCoordinator: Coordinator, LoginViewControllerDelegate {
         viewController.view.backgroundColor = .white
         viewController.delegate = self
         self.presenter.viewControllers = [viewController]
+        print("rootView",self.presenter.topViewController)
     }
     
     func login() {
@@ -111,6 +112,7 @@ class MainCoordinator: Coordinator, MainViewControllerDelegate {
         viewController.view.backgroundColor = .gray
         viewController.delegate = self
         presenter.viewControllers = [viewController]
+        print("rootView",self.presenter.topViewController)
     }
     
     func logout() {
