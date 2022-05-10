@@ -14,7 +14,7 @@ protocol Coordinator: AnyObject {
 }
 
 final class AppCoordinator: Coordinator {
-    var presneter: UINavigationController?
+    weak var presneter: UINavigationController?
     var childrenCoordinators: [Coordinator]
     var factory: Factory
     
@@ -27,6 +27,11 @@ final class AppCoordinator: Coordinator {
         let vc = factory.makeLoginViewController(coordinator: self)
         self.presneter = navigationController
         self.presneter?.pushViewController(vc, animated: true)
+    }
+    
+    func moveToMainView() {
+        let mainVC = factory.makeMainViewController(coordinator: self)
+        self.presneter?.pushViewController(mainVC, animated: true)
     }
     
 }

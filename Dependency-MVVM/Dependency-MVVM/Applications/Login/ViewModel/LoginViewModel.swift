@@ -8,13 +8,16 @@
 import Foundation
 
 final class LoginViewModel {
-    var factory: Factory?
+    
+    let coordinator: AppCoordinator?
+    
+    init(coordinator: AppCoordinator) {
+        self.coordinator = coordinator
+        print("dependency", coordinator)
+    }
 
-    
-    
     public func didTapLeftBarButton() {
-        let coordinator = factory?.makeMainCoordinator()
-        coordinator?.start()
+        coordinator?.moveToMainView()
     }
     
     

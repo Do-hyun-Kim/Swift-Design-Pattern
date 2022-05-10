@@ -9,42 +9,33 @@ import Foundation
 
 
 protocol Factory {
-    func makeLoginViewController(coordinator: Coordinator) -> LoginViewController
+    func makeLoginViewController(coordinator: AppCoordinator) -> LoginViewController
     func makeCoordinator() -> AppCoordinator
-    func makeLoginViewModel() -> LoginViewModel
-    func makeMainViewController(coordinator: Coordinator) -> MainViewController
-    func makeMainCoordinator() -> LoginCoordinator
+    func makeLoginViewModel(coordinator: AppCoordinator) -> LoginViewModel
+    func makeMainViewController(coordinator: AppCoordinator) -> MainViewController
 }
 
 class DependencyFactory: Factory {
-    func makeLoginViewController(coordinator: Coordinator) -> LoginViewController {
-        let loginViewController = LoginViewController(loginViewModel: makeLoginViewModel())
-        return loginViewController
-    }
-    
-    func makeLoginViewModel() -> LoginViewModel {
-        let loginViewModel = LoginViewModel()
-        return loginViewModel
-    }
     
     func makeCoordinator() -> AppCoordinator {
         let coordinator = AppCoordinator(factory: self)
         return coordinator
     }
     
-    func makeMainViewController(coordinator: Coordinator) -> MainViewController {
+    func makeLoginViewController(coordinator: AppCoordinator) -> LoginViewController {
+        let loginViewController = LoginViewController(loginViewModel: makeLoginViewModel(coordinator: coordinator))
+        return loginViewController
+    }
+    
+    func makeLoginViewModel(coordinator: AppCoordinator) -> LoginViewModel {
+        let loginViewModel = LoginViewModel(coordinator: coordinator)
+        return loginViewModel
+    }
+    
+    func makeMainViewController(coordinator: AppCoordinator) -> MainViewController {
         let mainViewController = MainViewController.init()
         return mainViewController
     }
-    
-    func makeMainCoordinator() -> LoginCoordinator {
-        let mainCoordinator = LoginCoordinator(factory: self)
-        return mainCoordinator
-    }
-    
-    
-    
-    
     
     
 }

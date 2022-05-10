@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B79B7CCD-9532-4D61-8327-5A0AFDF3B7D2"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70F20B65-4EDE-4D68-A141-F23B6F48CBEA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dependency-MVVM/Applications/Login/ViewModel/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "didTapLeftBarButton()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66DBB10E-6094-4B79-B576-8DA97A94823C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Dependency-MVVM/Applications/Main/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "66DBB10E-6094-4B79-B576-8DA97A94823C - ace3b638890b53e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dependency_MVVM.MainViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Dependency_MVVM.MainViewController"
+                  moduleName = "Dependency-MVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kimdohyun/Desktop/Swift-Design-Pattern/Dependency-MVVM/Dependency-MVVM/Applications/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "66DBB10E-6094-4B79-B576-8DA97A94823C - b22f120d855f729a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dependency_MVVM.MainViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Dependency_MVVM.MainViewController"
+                  moduleName = "Dependency-MVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kimdohyun/Desktop/Swift-Design-Pattern/Dependency-MVVM/Dependency-MVVM/Applications/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "304">
+               </Location>
+               <Location
+                  uuid = "66DBB10E-6094-4B79-B576-8DA97A94823C - 68a5711c29530ac9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dependency_MVVM.MainViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Dependency_MVVM.MainViewController&gt;"
+                  moduleName = "Dependency-MVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kimdohyun/Desktop/Swift-Design-Pattern/Dependency-MVVM/Dependency-MVVM/Applications/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  uuid = "66DBB10E-6094-4B79-B576-8DA97A94823C - f0e80649c945b051"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dependency_MVVM.MainViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Dependency_MVVM.MainViewController&gt;"
+                  moduleName = "Dependency-MVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kimdohyun/Desktop/Swift-Design-Pattern/Dependency-MVVM/Dependency-MVVM/Applications/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "66DBB10E-6094-4B79-B576-8DA97A94823C - b0edd2acb6ec966a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Dependency_MVVM.MainViewController.__deallocating_deinit"
+                  moduleName = "Dependency-MVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kimdohyun/Desktop/Swift-Design-Pattern/Dependency-MVVM/Dependency-MVVM/Applications/Main/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

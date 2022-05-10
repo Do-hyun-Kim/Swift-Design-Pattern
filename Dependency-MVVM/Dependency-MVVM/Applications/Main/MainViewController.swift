@@ -13,10 +13,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        print("MainViewController")
     }
     
     private func configure() {
-        
+        view.backgroundColor = .gray
     }
     
 }

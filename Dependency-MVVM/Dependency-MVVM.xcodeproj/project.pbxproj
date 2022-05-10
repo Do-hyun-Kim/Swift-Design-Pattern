@@ -15,12 +15,14 @@
 		FF5C8C2928293C530097BD2C /* Dependency_MVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C2828293C530097BD2C /* Dependency_MVVMTests.swift */; };
 		FF5C8C3328293C530097BD2C /* Dependency_MVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C3228293C530097BD2C /* Dependency_MVVMUITests.swift */; };
 		FF5C8C3528293C530097BD2C /* Dependency_MVVMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C3428293C530097BD2C /* Dependency_MVVMUITestsLaunchTests.swift */; };
-		FF5C8C4528293D5F0097BD2C /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C4428293D5F0097BD2C /* LoginCoordinator.swift */; };
 		FF5C8C4728293D720097BD2C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C4628293D720097BD2C /* MainCoordinator.swift */; };
 		FF5C8C4928293D860097BD2C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C4828293D860097BD2C /* AppCoordinator.swift */; };
 		FF5C8C4C282945B60097BD2C /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C4B282945B60097BD2C /* DependencyFactory.swift */; };
 		FF5C8C4F282A3F1C0097BD2C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C4E282A3F1C0097BD2C /* LoginViewModel.swift */; };
 		FF5C8C51282A409A0097BD2C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C50282A409A0097BD2C /* MainViewController.swift */; };
+		FF5C8C54282A54F40097BD2C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FF5C8C53282A54F40097BD2C /* RxCocoa */; };
+		FF5C8C56282A54F40097BD2C /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FF5C8C55282A54F40097BD2C /* RxRelay */; };
+		FF5C8C58282A54F40097BD2C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF5C8C57282A54F40097BD2C /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +55,6 @@
 		FF5C8C2E28293C530097BD2C /* Dependency-MVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dependency-MVVMUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5C8C3228293C530097BD2C /* Dependency_MVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency_MVVMUITests.swift; sourceTree = "<group>"; };
 		FF5C8C3428293C530097BD2C /* Dependency_MVVMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency_MVVMUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FF5C8C4428293D5F0097BD2C /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		FF5C8C4628293D720097BD2C /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FF5C8C4828293D860097BD2C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FF5C8C4B282945B60097BD2C /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
@@ -66,6 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF5C8C58282A54F40097BD2C /* RxSwift in Frameworks */,
+				FF5C8C56282A54F40097BD2C /* RxRelay in Frameworks */,
+				FF5C8C54282A54F40097BD2C /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +156,6 @@
 			children = (
 				FF5C8C4D282A3F0F0097BD2C /* ViewModel */,
 				FF5C8C1528293C500097BD2C /* LoginViewController.swift */,
-				FF5C8C4428293D5F0097BD2C /* LoginCoordinator.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -198,6 +201,11 @@
 			dependencies = (
 			);
 			name = "Dependency-MVVM";
+			packageProductDependencies = (
+				FF5C8C53282A54F40097BD2C /* RxCocoa */,
+				FF5C8C55282A54F40097BD2C /* RxRelay */,
+				FF5C8C57282A54F40097BD2C /* RxSwift */,
+			);
 			productName = "Dependency-MVVM";
 			productReference = FF5C8C0E28293C500097BD2C /* Dependency-MVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -270,6 +278,9 @@
 				Base,
 			);
 			mainGroup = FF5C8C0528293C500097BD2C;
+			packageReferences = (
+				FF5C8C52282A54F40097BD2C /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = FF5C8C0F28293C500097BD2C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -315,7 +326,6 @@
 				FF5C8C4928293D860097BD2C /* AppCoordinator.swift in Sources */,
 				FF5C8C1628293C500097BD2C /* LoginViewController.swift in Sources */,
 				FF5C8C1228293C500097BD2C /* AppDelegate.swift in Sources */,
-				FF5C8C4528293D5F0097BD2C /* LoginCoordinator.swift in Sources */,
 				FF5C8C4F282A3F1C0097BD2C /* LoginViewModel.swift in Sources */,
 				FF5C8C4728293D720097BD2C /* MainCoordinator.swift in Sources */,
 				FF5C8C51282A409A0097BD2C /* MainViewController.swift in Sources */,
@@ -674,6 +684,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FF5C8C52282A54F40097BD2C /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FF5C8C53282A54F40097BD2C /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF5C8C52282A54F40097BD2C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		FF5C8C55282A54F40097BD2C /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF5C8C52282A54F40097BD2C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		FF5C8C57282A54F40097BD2C /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF5C8C52282A54F40097BD2C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FF5C8C0628293C500097BD2C /* Project object */;
 }
