@@ -11,10 +11,9 @@ import UIKit
 protocol Coordinator: AnyObject {
     var presneter: UINavigationController? {get set}
     var childrenCoordinators: [Coordinator] {get set}
-    func start(_ navigationController: UINavigationController)
 }
 
-class AppCoordinator: Coordinator {
+final class AppCoordinator: Coordinator {
     var presneter: UINavigationController?
     var childrenCoordinators: [Coordinator]
     var factory: Factory

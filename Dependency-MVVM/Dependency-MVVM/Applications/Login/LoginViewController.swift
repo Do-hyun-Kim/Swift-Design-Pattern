@@ -9,17 +9,26 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    public var loginViewModel: LoginViewModel!
+    
+    init(loginViewModel: LoginViewModel) {
+        self.loginViewModel = loginViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         // Do any additional setup after loading the view.
     }
 
-    
     private func configure() {
         view.backgroundColor = .cyan
-        
-        
     }
 
 }
