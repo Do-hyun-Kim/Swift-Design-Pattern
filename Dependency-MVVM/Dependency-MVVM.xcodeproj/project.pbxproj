@@ -15,7 +15,6 @@
 		FF5C8C2928293C530097BD2C /* Dependency_MVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C2828293C530097BD2C /* Dependency_MVVMTests.swift */; };
 		FF5C8C3328293C530097BD2C /* Dependency_MVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C3228293C530097BD2C /* Dependency_MVVMUITests.swift */; };
 		FF5C8C3528293C530097BD2C /* Dependency_MVVMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C3428293C530097BD2C /* Dependency_MVVMUITestsLaunchTests.swift */; };
-		FF5C8C4728293D720097BD2C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C4628293D720097BD2C /* MainCoordinator.swift */; };
 		FF5C8C4928293D860097BD2C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C4828293D860097BD2C /* AppCoordinator.swift */; };
 		FF5C8C4C282945B60097BD2C /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C4B282945B60097BD2C /* DependencyFactory.swift */; };
 		FF5C8C4F282A3F1C0097BD2C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C4E282A3F1C0097BD2C /* LoginViewModel.swift */; };
@@ -23,6 +22,7 @@
 		FF5C8C54282A54F40097BD2C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FF5C8C53282A54F40097BD2C /* RxCocoa */; };
 		FF5C8C56282A54F40097BD2C /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FF5C8C55282A54F40097BD2C /* RxRelay */; };
 		FF5C8C58282A54F40097BD2C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF5C8C57282A54F40097BD2C /* RxSwift */; };
+		FF5C8C5B282A82190097BD2C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C5A282A82190097BD2C /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,11 +55,11 @@
 		FF5C8C2E28293C530097BD2C /* Dependency-MVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dependency-MVVMUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5C8C3228293C530097BD2C /* Dependency_MVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency_MVVMUITests.swift; sourceTree = "<group>"; };
 		FF5C8C3428293C530097BD2C /* Dependency_MVVMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency_MVVMUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FF5C8C4628293D720097BD2C /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FF5C8C4828293D860097BD2C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		FF5C8C4B282945B60097BD2C /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
 		FF5C8C4E282A3F1C0097BD2C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FF5C8C50282A409A0097BD2C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FF5C8C5A282A82190097BD2C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +163,7 @@
 		FF5C8C4328293D050097BD2C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FF5C8C4628293D720097BD2C /* MainCoordinator.swift */,
+				FF5C8C59282A82070097BD2C /* ViewModel */,
 				FF5C8C50282A409A0097BD2C /* MainViewController.swift */,
 			);
 			path = Main;
@@ -181,6 +181,14 @@
 			isa = PBXGroup;
 			children = (
 				FF5C8C4E282A3F1C0097BD2C /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF5C8C59282A82070097BD2C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF5C8C5A282A82190097BD2C /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -327,10 +335,10 @@
 				FF5C8C1628293C500097BD2C /* LoginViewController.swift in Sources */,
 				FF5C8C1228293C500097BD2C /* AppDelegate.swift in Sources */,
 				FF5C8C4F282A3F1C0097BD2C /* LoginViewModel.swift in Sources */,
-				FF5C8C4728293D720097BD2C /* MainCoordinator.swift in Sources */,
 				FF5C8C51282A409A0097BD2C /* MainViewController.swift in Sources */,
 				FF5C8C4C282945B60097BD2C /* DependencyFactory.swift in Sources */,
 				FF5C8C1428293C500097BD2C /* SceneDelegate.swift in Sources */,
+				FF5C8C5B282A82190097BD2C /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

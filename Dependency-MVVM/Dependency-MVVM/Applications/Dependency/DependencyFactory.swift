@@ -6,19 +6,20 @@
 //
 
 import Foundation
+import UIKit
 
 
 protocol Factory {
     func makeLoginViewController(coordinator: AppCoordinator) -> LoginViewController
-    func makeCoordinator() -> AppCoordinator
+    func makeCoordinator(window: UIWindow) -> AppCoordinator
     func makeLoginViewModel(coordinator: AppCoordinator) -> LoginViewModel
     func makeMainViewController(coordinator: AppCoordinator) -> MainViewController
 }
 
 class DependencyFactory: Factory {
     
-    func makeCoordinator() -> AppCoordinator {
-        let coordinator = AppCoordinator(factory: self)
+    func makeCoordinator(window: UIWindow) -> AppCoordinator {
+        let coordinator = AppCoordinator(window: window, factory: self)
         return coordinator
     }
     
