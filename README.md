@@ -82,3 +82,46 @@ Coordinator Pattern 코드 구현 하면서 궁금점
   
   
 <h2>Dependency Pattern</h2>
+  
+  
+  - Factory Protocol
+    - Protocol을 통하여 Class간의 의존성을 해결하며 ViewController의 화면전환, Initialize 초기화의 역할 추상화 
+    - DependencyFactory를 통하여 추상화 했던 Protocol을 구현하여 화면전환과 ViewModel, ViewController의 초기화 역할한다. -> DI, DIP 역할
+
+  
+  
+```swift
+  protocol Factory {
+    func makeLoginViewController(coordinator: AppCoordinator) -> LoginViewController
+    func makeCoordinator(window: UIWindow) -> AppCoordinator
+    func makeLoginViewModel(coordinator: AppCoordinator) -> LoginViewModel
+    func makeMainViewController(coordinator: AppCoordinator) -> MainViewController
+}
+
+class DependencyFactory: Factory {
+    
+    func makeCoordinator(window: UIWindow) -> AppCoordinator {
+        let coordinator = AppCoordinator(window: window, factory: self)
+        return coordinator
+    }
+    
+    func makeLoginViewController(coordinator: AppCoordinator) -> LoginViewController {
+        let loginViewController = LoginViewController(loginViewModel: makeLoginViewModel(coordinator: coordinator))
+        return loginViewController
+    }
+    
+    func makeLoginViewModel(coordinator: AppCoordinator) -> LoginViewModel {
+        let loginViewModel = LoginViewModel(coordinator: coordinator)
+        return loginViewModel
+    }
+    
+    func makeMainViewController(coordinator: AppCoordinator) -> MainViewController {
+        let mainViewController = MainViewController.init()
+        return mainViewController
+    }
+    
+    
+}
+
+```
+  
