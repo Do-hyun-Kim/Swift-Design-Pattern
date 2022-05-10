@@ -23,6 +23,8 @@
 		FF5C8C56282A54F40097BD2C /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FF5C8C55282A54F40097BD2C /* RxRelay */; };
 		FF5C8C58282A54F40097BD2C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF5C8C57282A54F40097BD2C /* RxSwift */; };
 		FF5C8C5B282A82190097BD2C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C5A282A82190097BD2C /* MainViewModel.swift */; };
+		FF5C8C5E282A8B9C0097BD2C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C5D282A8B9C0097BD2C /* SettingViewController.swift */; };
+		FF5C8C61282A8BD80097BD2C /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C60282A8BD80097BD2C /* SettingCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		FF5C8C4E282A3F1C0097BD2C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FF5C8C50282A409A0097BD2C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FF5C8C5A282A82190097BD2C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		FF5C8C5D282A8B9C0097BD2C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		FF5C8C60282A8BD80097BD2C /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,7 @@
 				FF5C8C4A282945920097BD2C /* Dependency */,
 				FF5C8C4328293D050097BD2C /* Main */,
 				FF5C8C4228293C9B0097BD2C /* Login */,
+				FF5C8C5C282A8B7E0097BD2C /* Settings */,
 			);
 			path = Applications;
 			sourceTree = "<group>";
@@ -191,6 +196,23 @@
 				FF5C8C5A282A82190097BD2C /* MainViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF5C8C5C282A8B7E0097BD2C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FF5C8C5F282A8BBF0097BD2C /* Coordinator */,
+				FF5C8C5D282A8B9C0097BD2C /* SettingViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FF5C8C5F282A8BBF0097BD2C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FF5C8C60282A8BD80097BD2C /* SettingCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,7 +358,9 @@
 				FF5C8C1228293C500097BD2C /* AppDelegate.swift in Sources */,
 				FF5C8C4F282A3F1C0097BD2C /* LoginViewModel.swift in Sources */,
 				FF5C8C51282A409A0097BD2C /* MainViewController.swift in Sources */,
+				FF5C8C5E282A8B9C0097BD2C /* SettingViewController.swift in Sources */,
 				FF5C8C4C282945B60097BD2C /* DependencyFactory.swift in Sources */,
+				FF5C8C61282A8BD80097BD2C /* SettingCoordinator.swift in Sources */,
 				FF5C8C1428293C500097BD2C /* SceneDelegate.swift in Sources */,
 				FF5C8C5B282A82190097BD2C /* MainViewModel.swift in Sources */,
 			);

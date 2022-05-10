@@ -14,6 +14,7 @@ protocol Factory {
     func makeCoordinator(window: UIWindow) -> AppCoordinator
     func makeLoginViewModel(coordinator: AppCoordinator) -> LoginViewModel
     func makeMainViewController(coordinator: AppCoordinator) -> MainViewController
+    func makeMainViewModel(coordinator: AppCoordinator) -> MainViewModel
 }
 
 class DependencyFactory: Factory {
@@ -34,9 +35,13 @@ class DependencyFactory: Factory {
     }
     
     func makeMainViewController(coordinator: AppCoordinator) -> MainViewController {
-        let mainViewController = MainViewController.init()
+        let mainViewController = MainViewController.init(mainViewModel: makeMainViewModel(coordinator: coordinator))
         return mainViewController
     }
     
+    func makeMainViewModel(coordinator: AppCoordinator) -> MainViewModel {
+        let mainViewModel = MainViewModel(coordinator: coordinator)
+        return mainViewModel
+    }
     
 }
