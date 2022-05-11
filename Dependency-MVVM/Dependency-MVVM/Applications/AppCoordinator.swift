@@ -19,6 +19,7 @@ final class AppCoordinator: Coordinator {
     var window: UIWindow?
     var childrenCoordinators: [Coordinator]
     var factory: Factory
+    var isLogin: Bool = true
     
     init(window: UIWindow ,factory: Factory) {
         self.window = window
@@ -28,10 +29,19 @@ final class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = factory.makeLoginViewController(coordinator: self)
-        self.presenter?.pushViewController(vc, animated: true)
+        if isLogin {
+            moveToLoginView()
+        } else {
+            moveToMainView()
+        }
         self.window?.rootViewController = presenter
         self.window?.makeKeyAndVisible()
+    }
+    
+    func moveToLoginView() {
+        let loginCoordinator = factory.makeLoginCoordinator(presenter: presenter!, parentCoordinator: self)
+        loginCoordinator.start()
+        self.childrenCoordinators.append(loginCoordinator)
     }
     
     func moveToMainView() {

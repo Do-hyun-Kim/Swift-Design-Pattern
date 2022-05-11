@@ -15,12 +15,18 @@ protocol Factory {
     func makeLoginViewModel(coordinator: AppCoordinator) -> LoginViewModel
     func makeMainViewController(coordinator: AppCoordinator) -> MainViewController
     func makeMainViewModel(coordinator: AppCoordinator) -> MainViewModel
+    func makeLoginCoordinator(presenter: UINavigationController, parentCoordinator: AppCoordinator) -> LoginCoordinator
 }
 
 class DependencyFactory: Factory {
     
     func makeCoordinator(window: UIWindow) -> AppCoordinator {
         let coordinator = AppCoordinator(window: window, factory: self)
+        return coordinator
+    }
+    
+    func makeLoginCoordinator(presenter: UINavigationController, parentCoordinator: AppCoordinator) -> LoginCoordinator {
+        let coordinator = LoginCoordinator(presenter: presenter, factory: self, parentCoordinator: parentCoordinator)
         return coordinator
     }
     

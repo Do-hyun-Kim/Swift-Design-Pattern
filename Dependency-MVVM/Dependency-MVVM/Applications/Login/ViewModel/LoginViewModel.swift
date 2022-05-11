@@ -17,7 +17,7 @@ final class LoginViewModel {
     }
 
     public func didTapLeftBarButton() {
-        coordinator?.moveToMainView()
+        coordinator?.moveToLoginView()
     }
     
     
