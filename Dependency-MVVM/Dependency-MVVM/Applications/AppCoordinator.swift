@@ -45,8 +45,9 @@ final class AppCoordinator: Coordinator {
     }
     
     func moveToMainView() {
-        let mainVC = factory.makeMainViewController(coordinator: self)
-        self.presenter?.pushViewController(mainVC, animated: true)
+        let mainCoordinator = factory.makeMainCoordinator(presenter: presenter!, parentCoordinator: self)
+        mainCoordinator.start()
+        self.childrenCoordinators.append(mainCoordinator)
     }
     
 }

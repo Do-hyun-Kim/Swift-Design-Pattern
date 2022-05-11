@@ -17,7 +17,7 @@ final class MainViewModel {
     }
     
     public func didTapBackButton() {
-        coordinator?.start()
+        coordinator?.moveToLoginView()
     }
     
 }

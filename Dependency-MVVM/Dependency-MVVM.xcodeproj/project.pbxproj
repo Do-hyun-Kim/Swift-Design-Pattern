@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF2790CD282BC6DC003A5323 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2790CC282BC6DC003A5323 /* LoginCoordinator.swift */; };
+		FF2790D0282C061F003A5323 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2790CF282C061F003A5323 /* MainCoordinator.swift */; };
 		FF5C8C1228293C500097BD2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C1128293C500097BD2C /* AppDelegate.swift */; };
 		FF5C8C1428293C500097BD2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C1328293C500097BD2C /* SceneDelegate.swift */; };
 		FF5C8C1628293C500097BD2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C1528293C500097BD2C /* LoginViewController.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		FF2790CC282BC6DC003A5323 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		FF2790CF282C061F003A5323 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FF5C8C0E28293C500097BD2C /* Dependency-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dependency-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5C8C1128293C500097BD2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF5C8C1328293C500097BD2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 			isa = PBXGroup;
 			children = (
 				FF2790CC282BC6DC003A5323 /* LoginCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FF2790CE282C060E003A5323 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FF2790CF282C061F003A5323 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -179,6 +189,7 @@
 		FF5C8C4328293D050097BD2C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FF2790CE282C060E003A5323 /* Coordinator */,
 				FF5C8C59282A82070097BD2C /* ViewModel */,
 				FF5C8C50282A409A0097BD2C /* MainViewController.swift */,
 			);
@@ -365,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF5C8C4928293D860097BD2C /* AppCoordinator.swift in Sources */,
+				FF2790D0282C061F003A5323 /* MainCoordinator.swift in Sources */,
 				FF5C8C1628293C500097BD2C /* LoginViewController.swift in Sources */,
 				FF5C8C1228293C500097BD2C /* AppDelegate.swift in Sources */,
 				FF5C8C4F282A3F1C0097BD2C /* LoginViewModel.swift in Sources */,
