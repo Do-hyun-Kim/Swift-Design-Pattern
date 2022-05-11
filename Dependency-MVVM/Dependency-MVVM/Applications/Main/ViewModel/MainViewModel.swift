@@ -18,33 +18,30 @@ protocol TableViewDependency {
 final class MainViewModel {
     
     private var coordinator: AppCoordinator?
-    private var mainDependecy: TableViewDependency
+    public var mainDependecy: TableViewDependency
     
-    var numberOfRowInSection: Int {
-        return mainDependecy.numberOfSections()
-    }
     
-    init(coordinator: AppCoordinator) {
+    init(coordinator: AppCoordinator, mainDependency: TableViewDependency) {
         self.coordinator = coordinator
+        self.mainDependecy = mainDependency
+        
     }
     
     public func didTapBackButton() {
         coordinator?.moveToLoginView()
     }
     
-    
-    
-    
-    
 }
+
+
 
 final class MainDependency: TableViewDependency {
     func numberOfSections() -> Int {
-        <#code#>
+        return 3
     }
     
     func showTableView(cellForRowAt: IndexPath) {
-        <#code#>
+        return
     }
     
 }

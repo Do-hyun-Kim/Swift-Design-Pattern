@@ -13,7 +13,7 @@ protocol Factory {
     func makeLoginViewController(coordinator: AppCoordinator) -> LoginViewController
     func makeMainViewController(coordinator: AppCoordinator) -> MainViewController
     func makeLoginViewModel(coordinator: AppCoordinator) -> LoginViewModel
-    func makeMainViewModel(coordinator: AppCoordinator) -> MainViewModel
+    func makeMainViewModel(coordinator: AppCoordinator, mainDependency: TableViewDependency) -> MainViewModel
     func makeCoordinator(window: UIWindow) -> AppCoordinator
     func makeLoginCoordinator(presenter: UINavigationController, parentCoordinator: AppCoordinator) -> LoginCoordinator
     func makeMainCoordinator(presenter: UINavigationController, parentCoordinator: AppCoordinator) -> MainCoordinator
@@ -47,12 +47,12 @@ class DependencyFactory: Factory {
     }
     
     func makeMainViewController(coordinator: AppCoordinator) -> MainViewController {
-        let mainViewController = MainViewController.init(mainViewModel: makeMainViewModel(coordinator: coordinator))
+        let mainViewController = MainViewController.init(mainViewModel: makeMainViewModel(coordinator: coordinator, mainDependency: MainDependency()))
         return mainViewController
     }
     
-    func makeMainViewModel(coordinator: AppCoordinator) -> MainViewModel {
-        let mainViewModel = MainViewModel(coordinator: coordinator)
+    func makeMainViewModel(coordinator: AppCoordinator, mainDependency: TableViewDependency) -> MainViewModel {
+        let mainViewModel = MainViewModel(coordinator: coordinator, mainDependency: mainDependency)
         return mainViewModel
     }
     

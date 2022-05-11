@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         configure()
         bind()
-        print("MainViewController")
+        print("MainViewController or Dependency : \(mainViewModel.mainDependecy.numberOfSections())")
     }
     
     private func bind() {
