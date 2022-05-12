@@ -23,6 +23,14 @@ class MainViewController: UIViewController {
     }(UIButton())
     
     
+    lazy var tableView: UITableView = {
+        let tableView: UITableView = UITableView(frame: .zero)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.separatorColor = .lightGray
+        return tableView
+    }()
+    
+    
     init(mainViewModel: MainViewModel) {
         self.mainViewModel = mainViewModel
         super.init(nibName: nil, bundle: nil)
@@ -37,7 +45,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         configure()
         bind()
-        print("MainViewController or Dependency : \(mainViewModel.mainDependecy.numberOfSections())")
     }
     
     private func bind() {
@@ -62,3 +69,15 @@ class MainViewController: UIViewController {
 
 
 
+
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mainViewModel.mainDependecy.numberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
+}

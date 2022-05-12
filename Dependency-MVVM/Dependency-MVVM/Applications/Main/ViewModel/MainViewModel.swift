@@ -32,16 +32,3 @@ final class MainViewModel {
     }
     
 }
-
-
-
-final class MainDependency: TableViewDependency {
-    func numberOfSections() -> Int {
-        return 3
-    }
-    
-    func showTableView(cellForRowAt: IndexPath) {
-        return
-    }
-    
-}
