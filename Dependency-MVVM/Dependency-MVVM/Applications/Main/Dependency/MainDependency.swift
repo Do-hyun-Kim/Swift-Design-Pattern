@@ -13,8 +13,8 @@ final class MainDependency: TableViewDependency {
         return 3
     }
     
-    func showTableView(cellForRowAt: IndexPath) {
-        return
+    func bindUI(viewModel: MainViewModel, _ indexPath: IndexPath) {
+        
     }
     
 }

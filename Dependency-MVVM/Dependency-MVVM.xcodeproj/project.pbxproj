@@ -10,7 +10,7 @@
 		FF2790CD282BC6DC003A5323 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2790CC282BC6DC003A5323 /* LoginCoordinator.swift */; };
 		FF2790D0282C061F003A5323 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2790CF282C061F003A5323 /* MainCoordinator.swift */; };
 		FF2790D3282C17B1003A5323 /* MainEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2790D2282C17B1003A5323 /* MainEntities.swift */; };
-		FF2790D6282C22D6003A5323 /* MainDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2790D5282C22D6003A5323 /* MainDependency.swift */; };
+		FF2790D9282D2B5C003A5323 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2790D8282D2B5C003A5323 /* MainTableViewCell.swift */; };
 		FF5C8C1228293C500097BD2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C1128293C500097BD2C /* AppDelegate.swift */; };
 		FF5C8C1428293C500097BD2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C1328293C500097BD2C /* SceneDelegate.swift */; };
 		FF5C8C1628293C500097BD2C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5C8C1528293C500097BD2C /* LoginViewController.swift */; };
@@ -52,7 +52,7 @@
 		FF2790CC282BC6DC003A5323 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		FF2790CF282C061F003A5323 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		FF2790D2282C17B1003A5323 /* MainEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntities.swift; sourceTree = "<group>"; };
-		FF2790D5282C22D6003A5323 /* MainDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDependency.swift; sourceTree = "<group>"; };
+		FF2790D8282D2B5C003A5323 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		FF5C8C0E28293C500097BD2C /* Dependency-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dependency-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF5C8C1128293C500097BD2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF5C8C1328293C500097BD2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,12 +126,12 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		FF2790D4282C22C3003A5323 /* Dependency */ = {
+		FF2790D7282D2B4D003A5323 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				FF2790D5282C22D6003A5323 /* MainDependency.swift */,
+				FF2790D8282D2B5C003A5323 /* MainTableViewCell.swift */,
 			);
-			path = Dependency;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		FF5C8C0528293C500097BD2C = {
@@ -209,7 +209,7 @@
 		FF5C8C4328293D050097BD2C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FF2790D4282C22C3003A5323 /* Dependency */,
+				FF2790D7282D2B4D003A5323 /* Cell */,
 				FF2790D1282C17A1003A5323 /* Entities */,
 				FF2790CE282C060E003A5323 /* Coordinator */,
 				FF5C8C59282A82070097BD2C /* ViewModel */,
@@ -401,8 +401,8 @@
 				FF2790D0282C061F003A5323 /* MainCoordinator.swift in Sources */,
 				FF5C8C1628293C500097BD2C /* LoginViewController.swift in Sources */,
 				FF5C8C1228293C500097BD2C /* AppDelegate.swift in Sources */,
+				FF2790D9282D2B5C003A5323 /* MainTableViewCell.swift in Sources */,
 				FF5C8C4F282A3F1C0097BD2C /* LoginViewModel.swift in Sources */,
-				FF2790D6282C22D6003A5323 /* MainDependency.swift in Sources */,
 				FF2790CD282BC6DC003A5323 /* LoginCoordinator.swift in Sources */,
 				FF5C8C51282A409A0097BD2C /* MainViewController.swift in Sources */,
 				FF5C8C5E282A8B9C0097BD2C /* SettingViewController.swift in Sources */,

@@ -10,21 +10,18 @@ import RxSwift
 import RxCocoa
 
 
-protocol TableViewDependency {
-    func numberOfSections() -> Int
-    func showTableView(cellForRowAt: IndexPath)
-}
 
 final class MainViewModel {
     
     private var coordinator: AppCoordinator?
-    public var mainDependecy: TableViewDependency
+    public var mainEntities: [MainEntities] = [MainEntities(person: "Dohyun", age: 20, type: "Swift"),MainEntities(person: "Jun", age: 20, type: "FE"),MainEntities(person: "Gin", age: 21, type: "Android")]
     
+    public var numberOfRowsInSection: Int  {
+        return mainEntities.count
+    }
     
-    init(coordinator: AppCoordinator, mainDependency: TableViewDependency) {
+    init(coordinator: AppCoordinator) {
         self.coordinator = coordinator
-        self.mainDependecy = mainDependency
-        
     }
     
     public func didTapBackButton() {
