@@ -13,6 +13,7 @@ protocol AppFlowDI {
     func makeMainCoordinator(presenter: UINavigationController) -> MainCoordinator
     func makeMainViewController() -> MainViewController
     func makeMainViewModel() -> MainViewModel
+    func makeMainUseCase() -> DefaultMainUseCase
 }
 
 
@@ -34,9 +35,15 @@ final class ViewControllerDI: AppFlowDI {
     }
     
     func makeMainViewModel() -> MainViewModel {
-        let mainViewModel = MainViewModel()
+        let mainViewModel = MainViewModel(mainUseCase: makeMainUseCase())
         return mainViewModel
     }
+    
+    func makeMainUseCase() -> DefaultMainUseCase {
+        let mainUseCases = DefaultMainUseCase(repository: DefaultMainRepositoy())
+        return mainUseCases
+    }
+    
     
     
 }

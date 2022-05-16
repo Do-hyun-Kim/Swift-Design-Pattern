@@ -18,6 +18,8 @@
 		FFF2D7DD2832481B00B1CD14 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7DC2832481B00B1CD14 /* MainViewModel.swift */; };
 		FFF2D7E0283248C000B1CD14 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7DF283248C000B1CD14 /* Coordinator.swift */; };
 		FFF2D7E4283249C000B1CD14 /* ViewControllerDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7E3283249C000B1CD14 /* ViewControllerDI.swift */; };
+		FFF2D7E72832596700B1CD14 /* MainUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7E62832596700B1CD14 /* MainUseCases.swift */; };
+		FFF2D7EA2832598B00B1CD14 /* MainEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7E92832598B00B1CD14 /* MainEntities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		FFF2D7DC2832481B00B1CD14 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		FFF2D7DF283248C000B1CD14 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FFF2D7E3283249C000B1CD14 /* ViewControllerDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDI.swift; sourceTree = "<group>"; };
+		FFF2D7E62832596700B1CD14 /* MainUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCases.swift; sourceTree = "<group>"; };
+		FFF2D7E92832598B00B1CD14 /* MainEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 		FF279117282FC139003A5323 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				FFF2D7E82832597500B1CD14 /* Entities */,
+				FFF2D7E52832595100B1CD14 /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -179,6 +185,22 @@
 				FFF2D7E3283249C000B1CD14 /* ViewControllerDI.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		FFF2D7E52832595100B1CD14 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				FFF2D7E62832596700B1CD14 /* MainUseCases.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		FFF2D7E82832597500B1CD14 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FFF2D7E92832598B00B1CD14 /* MainEntities.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,7 +338,9 @@
 				FF2790E7282D3E9D003A5323 /* AppDelegate.swift in Sources */,
 				FFF2D7E0283248C000B1CD14 /* Coordinator.swift in Sources */,
 				FF2790E9282D3E9D003A5323 /* SceneDelegate.swift in Sources */,
+				FFF2D7E72832596700B1CD14 /* MainUseCases.swift in Sources */,
 				FFF2D7DD2832481B00B1CD14 /* MainViewModel.swift in Sources */,
+				FFF2D7EA2832598B00B1CD14 /* MainEntities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

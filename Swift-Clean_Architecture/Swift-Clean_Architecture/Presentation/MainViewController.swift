@@ -9,8 +9,20 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    //MARK: Property
     private var viewModel: MainViewModel!
     
+    private lazy var tableView: UITableView = {
+        let mainTableView: UITableView = UITableView(frame: .zero)
+        mainTableView.separatorColor = .lightGray
+        mainTableView.separatorInset = .zero
+        mainTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return mainTableView
+    }()
+    
+    
+    //MARK: Initialize
     init(viewmodel: MainViewModel) {
         self.viewModel = viewmodel
         super.init(nibName: nil, bundle: nil)
@@ -21,6 +33,7 @@ class MainViewController: UIViewController {
     }
     
     
+    //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -29,11 +42,27 @@ class MainViewController: UIViewController {
     }
 
     
+    //MARK: Configure
     private func configure() {
         view.backgroundColor = .cyan
+        view.addSubview(tableView)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+}
+
+
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
     
     
-
 }
 
