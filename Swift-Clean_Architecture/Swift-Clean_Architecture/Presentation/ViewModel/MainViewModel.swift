@@ -7,6 +7,14 @@
 
 import Foundation
 
+protocol MainViewModelInput {
+    var didSelect: Void { get set}
+}
+
+protocol MainViewModelOutput {
+    
+}
+
 
 final class MainViewModel {
     
@@ -16,6 +24,8 @@ final class MainViewModel {
     init(mainUseCase: MainUseCase) {
         self.mainUseCase = mainUseCase
     }
+    
+    
     
     
     

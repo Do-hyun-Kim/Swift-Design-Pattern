@@ -18,7 +18,8 @@ class MainViewController: UIViewController {
         mainTableView.separatorInset = .zero
         mainTableView.translatesAutoresizingMaskIntoConstraints = false
         mainTableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
-        
+        mainTableView.backgroundColor = .white
+        mainTableView.rowHeight = 100
         return mainTableView
     }()
     
@@ -38,7 +39,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        print("MainViewController")
         // Do any additional setup after loading the view.
     }
 
@@ -48,22 +48,29 @@ class MainViewController: UIViewController {
         view.backgroundColor = .cyan
         view.addSubview(tableView)
         
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
 }
 
 
-//extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.mainUseCase.execute(entities: viewModel.entities)
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reuseIdentifier, for: indexPath) as? MainTableViewCell else { return UITableViewCell() }
+        cell.bind(viewmodel: viewModel, indexPath: indexPath)
+        return cell
+    }
+
     
-//}
+}
 

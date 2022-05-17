@@ -25,18 +25,19 @@ class Swift_Clean_ArchitectureTests: XCTestCase {
     }
 
     func testExample() throws {
+       
+    }
+    
+    func testNumberOfRowInSection() throws {
         //given
         self.flowDI = ViewControllerDI()
         self.mainViewModel = flowDI.makeMainViewModel()
         
-        let testEntities = [MainEntities(title: "MVP Pattern", pattern: "MVP", subTitle: "Presenter를 이용하며 View의 Life Cycle 영향을 받지 않는다"), MainEntities(title: "MVVM Pattern", pattern: "MVVM", subTitle: "ViewModel을 이용하여 View에 비즈니스 로직을 ViewModel이 감당하여 Massive한 부분을 조금더 줄여 줄수 있다.")]
-        
         //when
-        let testUseCase = mainViewModel.mainUseCase.execute(entities: testEntities)
+        let testUseCase = mainViewModel.mainUseCase.execute(entities: mainViewModel.entities)
         
         //then
         XCTAssertEqual(testUseCase, 2,"excute NumberOfRowInSection Error")
-        
     }
 
     func testPerformanceExample() throws {
