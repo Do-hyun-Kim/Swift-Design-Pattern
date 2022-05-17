@@ -20,6 +20,7 @@
 		FFF2D7E4283249C000B1CD14 /* ViewControllerDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7E3283249C000B1CD14 /* ViewControllerDI.swift */; };
 		FFF2D7E72832596700B1CD14 /* MainUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7E62832596700B1CD14 /* MainUseCases.swift */; };
 		FFF2D7EA2832598B00B1CD14 /* MainEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7E92832598B00B1CD14 /* MainEntities.swift */; };
+		FFF2D7ED283393BE00B1CD14 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7EC283393BE00B1CD14 /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		FFF2D7E3283249C000B1CD14 /* ViewControllerDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDI.swift; sourceTree = "<group>"; };
 		FFF2D7E62832596700B1CD14 /* MainUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCases.swift; sourceTree = "<group>"; };
 		FFF2D7E92832598B00B1CD14 /* MainEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntities.swift; sourceTree = "<group>"; };
+		FFF2D7EC283393BE00B1CD14 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		FF279118282FC14A003A5323 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FFF2D7EB283393AB00B1CD14 /* Cell */,
 				FFF2D7E12832497D00B1CD14 /* DI */,
 				FFF2D7DE283248A000B1CD14 /* Coordinator */,
 				FFF2D7DB2832480B00B1CD14 /* ViewModel */,
@@ -201,6 +204,14 @@
 				FFF2D7E92832598B00B1CD14 /* MainEntities.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		FFF2D7EB283393AB00B1CD14 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FFF2D7EC283393BE00B1CD14 /* MainTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF2790EB282D3E9D003A5323 /* MainViewController.swift in Sources */,
+				FFF2D7ED283393BE00B1CD14 /* MainTableViewCell.swift in Sources */,
 				FFF2D7E4283249C000B1CD14 /* ViewControllerDI.swift in Sources */,
 				FF2790E7282D3E9D003A5323 /* AppDelegate.swift in Sources */,
 				FFF2D7E0283248C000B1CD14 /* Coordinator.swift in Sources */,

@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
         mainTableView.separatorColor = .lightGray
         mainTableView.separatorInset = .zero
         mainTableView.translatesAutoresizingMaskIntoConstraints = false
+        mainTableView.register(MainTableViewCell.self, forCellReuseIdentifier: MainTableViewCell.reuseIdentifier)
         
         return mainTableView
     }()
@@ -47,22 +48,22 @@ class MainViewController: UIViewController {
         view.backgroundColor = .cyan
         view.addSubview(tableView)
         
-        tableView.delegate = self
-        tableView.dataSource = self
+//        tableView.delegate = self
+//        tableView.dataSource = self
     }
     
 }
 
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
+//extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
-    
-    
-}
+//}
 
