@@ -53,8 +53,33 @@ final class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let mainVC = flowDI.makeMainViewController()
+        let mainVC = flowDI.makeMainViewController(coordinator: self)
         self.presenter.pushViewController(mainVC, animated: true)
+    }
+    
+    func moveToDetail() {
+        let detailCoordinator = flowDI.makeDetailCoordinator(presenter: presenter)
+        detailCoordinator.start()
+        self.childrenCoordinator.append(detailCoordinator)
+    }
+    
+}
+
+
+final class DetailCoordinator: Coordinator {
+    var presenter: UINavigationController
+    var childrenCoordinator: [Coordinator]
+    var flowDI: AppFlowDI
+    
+    init(presenter: UINavigationController, flowDI: AppFlowDI) {
+        self.presenter = presenter
+        self.flowDI = flowDI
+        self.childrenCoordinator = []
+    }
+    
+    func start() {
+        let detailVC = flowDI.makeDetailViewController()
+        self.presenter.pushViewController(detailVC, animated: true)
     }
     
     

@@ -21,6 +21,7 @@
 		FFF2D7E72832596700B1CD14 /* MainUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7E62832596700B1CD14 /* MainUseCases.swift */; };
 		FFF2D7EA2832598B00B1CD14 /* MainEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7E92832598B00B1CD14 /* MainEntities.swift */; };
 		FFF2D7ED283393BE00B1CD14 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7EC283393BE00B1CD14 /* MainTableViewCell.swift */; };
+		FFF2D7EF2833C05E00B1CD14 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF2D7EE2833C05E00B1CD14 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		FFF2D7E62832596700B1CD14 /* MainUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCases.swift; sourceTree = "<group>"; };
 		FFF2D7E92832598B00B1CD14 /* MainEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEntities.swift; sourceTree = "<group>"; };
 		FFF2D7EC283393BE00B1CD14 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		FFF2D7EE2833C05E00B1CD14 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				FFF2D7DE283248A000B1CD14 /* Coordinator */,
 				FFF2D7DB2832480B00B1CD14 /* ViewModel */,
 				FF2790EA282D3E9D003A5323 /* MainViewController.swift */,
+				FFF2D7EE2833C05E00B1CD14 /* DetailViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				FFF2D7E0283248C000B1CD14 /* Coordinator.swift in Sources */,
 				FF2790E9282D3E9D003A5323 /* SceneDelegate.swift in Sources */,
 				FFF2D7E72832596700B1CD14 /* MainUseCases.swift in Sources */,
+				FFF2D7EF2833C05E00B1CD14 /* DetailViewController.swift in Sources */,
 				FFF2D7DD2832481B00B1CD14 /* MainViewModel.swift in Sources */,
 				FFF2D7EA2832598B00B1CD14 /* MainEntities.swift in Sources */,
 			);

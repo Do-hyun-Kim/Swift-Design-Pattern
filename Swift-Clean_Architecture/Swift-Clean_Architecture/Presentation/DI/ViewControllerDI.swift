@@ -11,9 +11,11 @@ import UIKit
 protocol AppFlowDI {
     func makeAppCoordinator(window: UIWindow) -> AppCoordinator
     func makeMainCoordinator(presenter: UINavigationController) -> MainCoordinator
-    func makeMainViewController() -> MainViewController
-    func makeMainViewModel() -> MainViewModel
+    func makeDetailCoordinator(presenter: UINavigationController) -> DetailCoordinator
+    func makeMainViewController(coordinator: MainCoordinator) -> MainViewController
+    func makeMainViewModel(coordinator: MainCoordinator) -> MainViewModel
     func makeMainUseCase() -> DefaultMainUseCase
+    func makeDetailViewController() -> DetailViewController
 }
 
 
@@ -29,13 +31,13 @@ final class ViewControllerDI: AppFlowDI {
         return mainCoordinator
     }
     
-    func makeMainViewController() -> MainViewController {
-        let mainViewController = MainViewController(viewmodel: makeMainViewModel())
+    func makeMainViewController(coordinator: MainCoordinator) -> MainViewController {
+        let mainViewController = MainViewController(viewmodel: makeMainViewModel(coordinator: coordinator))
         return mainViewController
     }
     
-    func makeMainViewModel() -> MainViewModel {
-        let mainViewModel = MainViewModel(mainUseCase: makeMainUseCase())
+    func makeMainViewModel(coordinator: MainCoordinator) -> MainViewModel {
+        let mainViewModel = MainViewModel(mainUseCase: makeMainUseCase(), coordinator: coordinator)
         return mainViewModel
     }
     
@@ -44,6 +46,15 @@ final class ViewControllerDI: AppFlowDI {
         return mainUseCases
     }
     
+    func makeDetailCoordinator(presenter: UINavigationController) -> DetailCoordinator {
+        let detailCoordinator = DetailCoordinator(presenter: presenter, flowDI:  self)
+        return detailCoordinator
+    }
+    
+    func makeDetailViewController() -> DetailViewController {
+        let detailViewController = DetailViewController()
+        return detailViewController
+    }
     
     
 }
